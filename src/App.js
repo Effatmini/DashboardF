@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import StatsCard from "./components/StatsCard";
@@ -9,6 +8,12 @@ import ProductsBar from "./components/ProductsBar";
 import AddSale from "./pages/AddSale";
 import ProductsPopup from "./components/productspopup";
 import "./App.css";
+
+// ================== MOVE OUTSIDE COMPONENT ==================
+const months = [
+  "Jan","Feb","Mar","Apr","May","Jun",
+  "Jul","Aug","Sep","Oct","Nov","Dec"
+];
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,8 +27,6 @@ function App() {
   const [monthlyData, setMonthlyData] = useState([]);
   const [refreshProducts, setRefreshProducts] = useState(0);
   const [loading, setLoading] = useState(true);
-
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
   // ================== Fetch Dashboard Data ==================
   const fetchDashboardData = useCallback(() => {
@@ -82,6 +85,7 @@ function App() {
       />
 
       <div className="main-content">
+
         {/* Cards */}
         <div className="cards">
           <StatsCard title="Total Sales" value={loading ? "Loading..." : `$${totalSales}`} icon="💰" />
@@ -115,9 +119,10 @@ function App() {
             <SalesBarChart data={filteredData} />
           </div>
         </div>
+
       </div>
 
-      {/* Add Sale */}
+      {/* Add Sale Modal */}
       {showAddSaleForm && (
         <AddSale
           onClose={() => setShowAddSaleForm(false)}
