@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, } from "react";
 import Navbar from "./components/Navbar";
 import StatsCard from "./components/StatsCard";
 import SalesLineChart from "./components/SalesLineChart";
