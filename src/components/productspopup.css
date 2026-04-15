@@ -1,0 +1,163 @@
+/* ===== OVERLAY ===== */
+.products-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ===== POPUP BOX ===== */
+.products-popup-content {
+  background: #1e293b;
+  color: #ffffff;
+
+  padding: 25px 30px;
+  border-radius: 16px;
+
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== TITLE ===== */
+.products-popup-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #6366f1;
+}
+
+/* ===== MESSAGE ===== */
+.products-message {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+/* ===== FORM ===== */
+.products-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.products-form-group label {
+  margin-bottom: 5px;
+  color: #94a3b8;
+}
+
+.products-form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+
+  background: #020617;
+  color: #ffffff;
+}
+
+/* ===== BUTTONS ===== */
+.products-form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.products-form-buttons button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* ADD */
+.products-form-buttons button[type="submit"] {
+  background: #6366f1;
+  color: #fff;
+}
+
+.products-form-buttons button[type="submit"]:hover {
+  background: #818cf8;
+  transform: translateY(-2px);
+}
+
+/* CANCEL */
+.products-form-buttons button[type="button"] {
+  background: #ef4444;
+  color: #fff;
+}
+
+.products-form-buttons button[type="button"]:hover {
+  background: #dc2626;
+}
+
+/* ===== PRODUCTS LIST ===== */
+.products-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.products-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  border-bottom: 1px solid #334155;
+  color: #cbd5f5;
+}
+
+/* DELETE BUTTON */
+.products-delete-btn {
+  background: #ef4444;
+  color: #fff;
+
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.products-delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .products-popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+}

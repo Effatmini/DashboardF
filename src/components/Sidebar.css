@@ -1,0 +1,46 @@
+/* Sidebar Light Mode */
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  height: 100vh;             /* يغطي طول الشاشة */
+  background-color: #045854dc;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  border-radius: 12px 0 0 12px;
+  position: fixed;           /* هنا الفرق */
+  top: 0;                     /* يبدأ من أعلى الشاشة */
+  left: 0;
+  box-sizing: border-box;
+}
+
+
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin: 15px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #d0d4db;
+  color: #1976d2;
+}
+
+/* Dark Mode */
+.sidebar.dark {
+  background-color: #1b1b2f;
+  color: white;
+}
+
+.sidebar.dark a {
+  color: white;
+}
+
+.sidebar.dark a:hover {
+  background-color: #2a2a4d;
+  color: #4caf50;
+}
