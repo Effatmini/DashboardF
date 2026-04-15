@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import StatsCard from "./components/StatsCard";
 import SalesLineChart from "./components/SalesLineChart";
@@ -9,6 +9,7 @@ import ProductsBar from "./components/ProductsBar";
 import AddSale from "./pages/AddSale";
 import ProductsPopup from "./components/productspopup";
 import "./App.css";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -58,9 +59,10 @@ function App() {
   };
 
   // ================== Initial Load ==================
-  useEffect(() => { 
-    fetchDashboardData(); 
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  fetchDashboardData();
+}, []);
 
   const filteredData = !selectedMonth || selectedMonth === "All"
     ? monthlyData
